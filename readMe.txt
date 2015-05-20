@@ -1,0 +1,1 @@
+hello hibernate hit test
