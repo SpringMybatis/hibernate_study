@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 指定连接数据库的驱动 -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<!-- 指定连接数据库的URL以及要连接的数据库 -->
+		<property name="connection.url">jdbc:oracle:thin:@192.168.1.212:1522:gb</property>
+		<!-- 指定连接的数据库类型 -->
+		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+		<!-- 连接数据库的用户名 -->
+		<property name="connection.username">gb_test</property>
+		<!-- 指定连接数据库的密码 -->
+		<property name="connection.password">ruiyuan</property>
+
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+		
+		<mapping resource="zw/zj/hibernate/model/Student.hbm.xml"/>
+		<mapping resource="zw/zj/hibernate/model/Course.hbm.xml"/>
+		
+	</session-factory>
+</hibernate-configuration>

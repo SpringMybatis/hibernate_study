@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zw.zj.hibernate.extend.model">
+	<class name="Animals" table="t_animal">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="sex"></property>
+
+		<union-subclass name="Pig" table="t_pig">
+			<property name="weight" />
+		</union-subclass>
+		<union-subclass name="Dog" table="t_dog">
+			<property name="height" />
+		</union-subclass>
+	</class>
+</hibernate-mapping>

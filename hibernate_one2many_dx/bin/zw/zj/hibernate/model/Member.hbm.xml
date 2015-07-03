@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zw.zj.hibernate.model">
+	<class name="Member" table="test_member">
+		<id name="id">
+			<generator class="uuid.hex"></generator>
+		</id>
+
+		<property name="name"></property>
+		<property name="age"></property>
+
+		<!--set元素，就是定义一个集合，它的name属性值是对应的POJO中的相关属性名称 -->
+		<set name="orders" cascade="all" inverse="true">
+			<!--设置inverse=”true”表示Member不在作为主控方，就是说不再由Member来维持关联关系，  
+                而有Order方来维持关联关系，这样Order在持久化的时候会主动去获取Member的主键值来作为自己  
+                的外键值。 在one-to-manay关联关系中，一般将manay端设置为主控方（inverse=”false”），  
+                这样将有助于改善性能。默认情况下inverse=”false” -->   
+			
+			<!--指定“多”的一段的外键，与“一”端得主键相关联 -->
+			<key column="MEM_ID"></key>
+			<!--指定了“多”端对应的类 -->
+			<one-to-many class="Order" />
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zw.zj.hibernate.extend.model">
+	<class name="Animals">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<discriminator column="type" type="string" />
+		
+		<property name="name"></property>
+		<property name="sex"></property>	
+		
+		<subclass name="Pig" discriminator-value="P">
+			<property name="weight"></property>
+		</subclass>
+		<subclass name="Dog" discriminator-value="D">
+			<property name="height"></property>
+		</subclass>
+	</class>
+</hibernate-mapping>

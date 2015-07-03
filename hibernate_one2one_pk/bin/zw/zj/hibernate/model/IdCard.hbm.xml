@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zw.zj.hibernate.model">
+	<class name="IdCard">
+
+		<!--使用主键关联，引用Member对应表的主键作为自己的主键 -->
+		<id name="id">
+			<generator class="foreign">
+				<!--此处的member必须和下面配置的one-to-one的name属性一样 -->
+				<param name="property">member</param>
+			</generator>
+		</id>
+		<property name="num"></property>
+
+		<one-to-one name="member" class="Member" constrained="true"></one-to-one>
+
+	</class>
+</hibernate-mapping>
