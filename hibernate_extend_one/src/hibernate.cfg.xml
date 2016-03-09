@@ -5,15 +5,15 @@
 <hibernate-configuration>
 	<session-factory>
 		<!-- 指定连接数据库的驱动 -->
-		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<!-- 指定连接数据库的URL以及要连接的数据库 -->
-		<property name="connection.url">jdbc:oracle:thin:@192.168.1.212:1522:gb</property>
+		<property name="connection.url">jdbc:mysql://192.168.208.120:3306/hibernate</property>
 		<!-- 指定连接的数据库类型 -->
-		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<!-- 连接数据库的用户名 -->
-		<property name="connection.username">gb_test</property>
+		<property name="connection.username">root</property>
 		<!-- 指定连接数据库的密码 -->
-		<property name="connection.password">ruiyuan</property>
+		<property name="connection.password">123456</property>
 
 		<property name="show_sql">true</property>
 		<property name="format_sql">false</property>
