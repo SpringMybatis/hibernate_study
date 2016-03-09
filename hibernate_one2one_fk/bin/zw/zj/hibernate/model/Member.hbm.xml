@@ -3,7 +3,7 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="zw.zj.hibernate.model">
-	<class name="Member">
+	<class name="Member" table="MY_TEST_MEMBER">
 		<id name="id">
 			<generator class="native"></generator>
 		</id>

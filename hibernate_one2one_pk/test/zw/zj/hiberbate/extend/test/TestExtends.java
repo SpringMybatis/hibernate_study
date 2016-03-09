@@ -29,7 +29,8 @@ public class TestExtends extends TestCase {
 
 			m.setCard(card);// 设置Member和IdCard关系
 
-			session.save(m);
+			// 执行顺序是先插入memeber，再插入IDcard   共用member的主键
+			session.save(card);
 
 			transaction.commit();
 		} catch (Exception e) {

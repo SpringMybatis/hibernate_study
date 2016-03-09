@@ -5,14 +5,14 @@
 <hibernate-mapping package="zw.zj.hibernate.model">
 	<class name="Member" table="test_member">
 		<id name="id">
-			<generator class="uuid.hex"></generator>
+			<generator class="uuid"></generator>
 		</id>
 
 		<property name="name"></property>
 		<property name="age"></property>
 
 		<!--set元素，就是定义一个集合，它的name属性值是对应的POJO中的相关属性名称 -->
-		<set name="orders" cascade="all" inverse="true">
+		<set name="orders" inverse="true">
 			<!--设置inverse=”true”表示Member不在作为主控方，就是说不再由Member来维持关联关系，  
                 而有Order方来维持关联关系，这样Order在持久化的时候会主动去获取Member的主键值来作为自己  
                 的外键值。 在one-to-manay关联关系中，一般将manay端设置为主控方（inverse=”false”），  

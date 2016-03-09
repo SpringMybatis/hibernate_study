@@ -3,16 +3,16 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="zw.zj.hibernate.model">
-	<class name="Member" table="test_member">
+	<class name="Member" table="test_member1">
 		<id name="id">
-			<generator class="uuid.hex"></generator>
+			<generator class="uuid"></generator>
 		</id>
 
 		<property name="name"></property>
 		<property name="age"></property>
 
 		<!--set元素，就是定义一个集合，它的name属性值是对应的POJO中的相关属性名称 -->
-		<set name="orders" cascade="all">
+		<set name="orders">
 			<!--指定“多”的一段的外键，与“一”端得主键相关联 -->
 			<key column="MEM_ID"></key>
 			<!--指定了“多”端对应的类 -->

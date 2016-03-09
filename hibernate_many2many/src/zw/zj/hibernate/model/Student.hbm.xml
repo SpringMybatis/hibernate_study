@@ -8,12 +8,9 @@
 			<generator class="increment" />
 		</id>
 		<property name="name"/>
-		
-		
 		<set name="course" inverse="false" cascade="save-update" table="student_course">
             <key column="student_id"></key>
             <many-to-many class="Course" column="course_id"></many-to-many>
         </set>
-        
 	</class>
 </hibernate-mapping>

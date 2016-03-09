@@ -1,5 +1,6 @@
 package zw.zj.hibernate.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Member {
@@ -7,7 +8,7 @@ public class Member {
 	private String id;
 	private String name;
 	private Integer age;
-	private Set<Order> orders;
+	private Set<Order> orders = new HashSet<Order>();
 
 	public String getId() {
 		return id;

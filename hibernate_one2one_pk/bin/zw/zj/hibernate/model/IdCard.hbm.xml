@@ -14,6 +14,7 @@
 		</id>
 		<property name="num"></property>
 
+		<!-- 公用member的主键 -->
 		<one-to-one name="member" class="Member" constrained="true"></one-to-one>
 
 	</class>

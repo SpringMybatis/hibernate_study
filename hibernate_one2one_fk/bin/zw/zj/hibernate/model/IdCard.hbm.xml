@@ -3,14 +3,14 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="zw.zj.hibernate.model">
-	<class name="IdCard">
+	<class name="IdCard" table="Test_IdCard">
 
 		<id name="id">
 			<generator class="native" />
 		</id>
 		<property name="num"></property>
 
-		<!-- 唯一外键many-to-one  -->
+		<!-- 唯一外键many-to-one(Member的主见做为IdCard的外键) -->
 		<many-to-one name="member" column="member_id" unique="true" class="Member"></many-to-one>
 
 	</class>
